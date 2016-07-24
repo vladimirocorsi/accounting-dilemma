@@ -64,7 +64,7 @@ public class Main {
 		// Looking for a solution
 		final BigDecimal[] duePayments = amounts.toArray(new BigDecimal[amounts
 				.size()]);
-		final Finder finder = FinderFactory.myFinder(duePayments, bankTransfer);
+		final Finder finder = FinderFactory.finder(duePayments, bankTransfer);
 		final BigDecimal[] solution = finder.find();
 		// Printing output file
 		try (PrintWriter pw = new PrintWriter(new FileWriter(

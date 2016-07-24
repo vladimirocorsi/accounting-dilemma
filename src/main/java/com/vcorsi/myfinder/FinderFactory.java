@@ -18,8 +18,14 @@ public class FinderFactory {
 	 * @return a Finder object to solve the Accounting Dilemma.
 	 * @throws IllegalArgumentException
 	 */
-	public static Finder myFinder(final BigDecimal[] duePayments, BigDecimal sum) {
-		return new DPFinder(duePayments, sum);
+	public static Finder finder(final BigDecimal[] duePayments, BigDecimal sum) {
+		final int numOfPayments = duePayments.length;
+		if(Math.pow(2, numOfPayments) > numOfPayments * sum.unscaledValue().longValue()){
+			return new DPFinder(duePayments, sum);
+		}else{
+			return new MyFinder(duePayments, sum);
+		}
+		
 	}
 
 }
