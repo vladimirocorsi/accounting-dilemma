@@ -4,6 +4,13 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Uses dynamic programming to find a solution to the Accounting Dilemma
+ * problem.
+ * 
+ * @author vladimiro
+ *
+ */
 class DPFinder implements Finder {
 	
 	static class Struct{
